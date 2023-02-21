@@ -1,0 +1,11 @@
+21 Février 2023
+main2.cVers la création d'enregistrements instantannés
+------------------------------------------------------------------------------------------------------------------------------
+Exercice 1:
+1.1/ 
+
+1.2/ 
+cat main.c | sha256sum > file.tmp
+system("cmd") permet d'exécutre une commande bash dans un programme cmd
+
+1.3/
