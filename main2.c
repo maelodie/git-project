@@ -4,7 +4,7 @@
 #include <string.h>
 
 int hashFile(char * source, char * dest) {
-    char cmd[100];
+    char cmd[1000];
     sprintf(cmd, "cat %s | sha256sum > %s", source, dest);
     system(cmd);
     return 0;
