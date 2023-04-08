@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
-#include "liste.h"
+#include "../exo2/liste.h"
 #include "fichier.h"
 
 List listdir(char* root_dir) {

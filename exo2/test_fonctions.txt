@@ -1,0 +1,13 @@
+initList: OK
+buildCell: OK
+insertFirst: OK
+printList: OK
+freeCell: OK
+freeList: OK
+ctos: OK
+ltos: OK
+listGet: OK
+searchList: OK
+stol: REECRITURE
+ltof: OK
+ftol: OK

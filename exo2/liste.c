@@ -3,9 +3,16 @@
 #include <string.h>
 #include "liste.h"
 
-List initList() {
-    List new = (List)malloc(sizeof(List));
+List* initList() {
+    List* new = malloc(sizeof(List));
+    *new = NULL;
     return new;
+}
+
+void listeVide(List* L) {
+    if((*L) == NULL) {
+        printf("La liste est vide\n");
+    }
 }
 
 Cell* buildCell(char* ch) {
@@ -15,29 +22,21 @@ Cell* buildCell(char* ch) {
     return new;
 }
 
-void insertFirst(List L, Cell* C) {
-    C->next = L;
-    L = C;
+void insertFirst(List* L, Cell* C) {
+    C->next = *L;
+    *L = C;
 }
 
-void insertLast(List L, Cell* C) {
-    if(L == NULL) {
-        L = C;
-    }
-
-    List xs = L;
-    while(xs->next) {
-        xs = xs->next;
-    }
-    xs->next = C;
-
+void printCell(Cell* C) {
+    printf("%s\n",C->data);
+    
 }
 
-void printList(List L) {
-    List xs = L;
-    while(xs) {
-        printf("%s ",xs->data);
-        xs = xs->next;
+void printList(List* L) {
+    List ptr = *L;
+    while((ptr)) {
+        printf("%s ", ptr->data);
+        ptr = ptr->next;
     }
     printf("\n");
 }
@@ -47,80 +46,102 @@ void freeCell(Cell* C) {
     free(C);
 }
 
-void freeList(List L) {
-    List toDelete = L;
-    while(L) {
-        toDelete = L;
-        L = L->next;
-        freeCell(toDelete);
+void freeList(List* L) {
+    if((*L)!=NULL) {
+        Cell* toDelete = (*L);
+        while(*L) {
+            toDelete = (*L);
+            (*L) = (*L)->next;
+            freeCell(toDelete);
+        }
     }
+    free(L);
+    
 }
 
 char* ctos(Cell* c) {
     return c->data;
 }
 
-char* ltos(List L) {
-    char* res='\0';
-    List xs = L;
-    while(xs->next) {
-        strcat(res,strcat(ctos(xs),"|" ));
-        xs = xs->next;
+char* ltos(List* L) {
+    if(L == NULL) {
+        return " ";
     }
-    strcat(res,L->data);
-    return res;
+    char* ch = (char*)malloc(MAX_FILES*sizeof(char));
+    List ptr = *L;
+    while(ptr != NULL) {
+        strcat(ch, ctos(ptr));
+        ptr = ptr->next;
+        if(ptr != NULL) {
+            strcat(ch, "|");
+        }
+    }
+    return ch;
 }
 
-Cell* listGet(List L, int i) {
+Cell* listGet(List *L, int i) {
     int pos = 0;
-    List xs = L;
+    List ptr = *L;
     
-    while(xs && pos!=i) {
-        xs = xs->next;
+    while(ptr && pos!=i) {
+        ptr = ptr->next;
         pos++;
     }
 
-    return xs;
-}
-
-Cell* searchList(List L, char* str) {
-    List xs = L;
-    while(xs && strcmp(L->data,str)==0) {
-        xs = xs->next;
+    if(ptr == NULL) {
+        printf("INDEX_OUT_OF_RANGE\n");
     }
-    return xs;
+    return ptr;
 }
 
-List stol(char* s) {
-    List L = initList();
+Cell* searchList(List* L, char* str) {
+    List ptr = *L;
+    while(ptr && strcmp(ptr->data,str)!=0) {
+        ptr = ptr->next;
+    }
+    return ptr;
+}
 
-    char* cellule = '\0';
-    int i = -1;
 
-    while(s[i]!='\0') {
-        i++;
-        if(s[i]=='|') {
-            insertLast(L,buildCell(cellule));
-            cellule[0]='\0';
-
+List* stol(char* s){
+    List* L = initList();
+    Cell* courant = NULL;
+    char* deb = s;
+    char* fin = s;
+    while (*fin != '\0'){
+        if (*fin == '|'){
+            Cell* c = buildCell(strndup(deb, fin - deb));
+            if (courant != NULL){
+                courant->next = c;
+            }
+            else{
+                *L = c;
+            }
+            courant = c;
+            deb = fin + 1;
         }
-        else if(s[i]=='\0') {
-            insertLast(L,buildCell(cellule));
+        fin++;
+    }
+    if (deb != fin){
+        Cell* c = buildCell(strndup(deb, fin - deb));
+        if (courant != NULL){
+            courant->next = c;
         }
-        else {
-            strcat(cellule,&s[i]);
+        else{
+            *L = c;
         }
     }
     return L;
 }
 
-void ltof(List L, char* path) {
+
+void ltof(List* L, char* path) {
     FILE* f = fopen(path,"w");
     if(f == NULL) {
         printf("Erreur sur l'ouverture de fichier\n");
         exit(EXIT_FAILURE);
     }
-    List xs = L;
+    Cell* xs = *L;
     while(xs) {
         fprintf(f,"%s\n",xs->data);
         xs = xs->next;
@@ -128,8 +149,8 @@ void ltof(List L, char* path) {
     fclose(f);
 }
 
-List ftol(char* path) {
-    List L = initList();
+List* ftol(char* path) {
+    List* L = initList();
 
     FILE* f = fopen(path,"r");
     if(f == NULL) {
@@ -139,21 +160,9 @@ List ftol(char* path) {
 
     char buffer[400];
     while(fgets(buffer, 400, f)) {
-        insertLast(L, buildCell(strdup(buffer)));
+        insertFirst(L, buildCell(strdup(buffer)));
     }
 
     fclose(f);
     return L;
 }
-
-
-
-
-
-
-
-
-
-
-
-
