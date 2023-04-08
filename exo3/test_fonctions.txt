@@ -1,0 +1,5 @@
+listdir: OK
+file_exists: OK
+cp: OK
+hashToPath: OK
+blobFile: OK

@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "fichier.h"
+#include "../exo2/liste.h"
+
 
 void afficher_docs(char* dir) {
     //Allocation de la structure dir

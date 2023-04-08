@@ -1,1 +1,2 @@
-- Exo2: erreur au niveau de l'exécution (valgrind)
+- Exo2: stol
+- Apprendre à inclure des fonctions d'autres librairies dans un code (makefile)

@@ -4,7 +4,7 @@
 int hashFile(char * source, char * dest) {
     int res; 
 
-    //Copie du contenu de source dans un fichier source.txt
+    //Copie du contenu de source dans un fichier dest.txt
     FILE* f1 = fopen("source.txt", "w");
     fprintf(f1, "%s", source);
     fclose(f1);
