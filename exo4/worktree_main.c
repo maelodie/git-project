@@ -20,13 +20,16 @@ int main(void) {
     printWorkFile(wf3);
     printWorkFile(wf4);
     sep();
+
     //Conversion d'un workfile en une chaine
     printf("%s\n",wtfs(wf1));
     sep();
+    
     //Conversion d'une chaine en un Workfile
     WorkFile* wf5 = stwf("mondoc sk34zf134141ffdaaf 2");
     printWorkFile(wf5);
     sep();
+
 
     //Initialisation d'un WorkTree
     WorkTree* wt = initWorkTree();

@@ -40,8 +40,8 @@ WorkTree* initWorkTree() {
 }
 
 int inWorkTree(WorkTree* wt, char* name) {
-    for(int i = 0; i < (wt->size); i++) {
-        if((wt->tab[i]).name == name) {
+    for(int i = 0; i < wt->n; i++) {
+        if(strcmp(wt->tab[i].name, name) == 0) {
             return i;
         }
     }
@@ -79,10 +79,10 @@ void printWorkTree(WorkTree* wt) {
 
 char* wtts(WorkTree* wt) {
     char* res = (char*)malloc(sizeof(char)*1000);
-    char* tabVal;
+    char* tabVal = (char*)malloc(sizeof(char));
     char* sep = "\n";
     for(int i = 0; i < wt->n; i++) {
-        tabVal = wtfs(&(wt->tab[i]));
+        tabVal = wtfs(wt->tab + i);
         strcat(res, tabVal);
         strcat(res, sep);
     }

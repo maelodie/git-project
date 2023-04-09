@@ -1,2 +1,2 @@
 - Apprendre à inclure des fonctions d'autres librairies dans un code (makefile)
-- Débugger les erreurs sur valgrind
+- Débugger les erreurs sur valgrind (erreurs avec strcat)
