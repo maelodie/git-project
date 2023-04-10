@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include "worktree.h"
+#include "fichier.h"
+#include "hash.h"
 
 WorkFile* createWorkFile(char* name) {
     WorkFile* new = (WorkFile*)malloc(sizeof(WorkFile));
@@ -134,4 +138,35 @@ void freeWorkFile(WorkFile* wf) {
 void freeWorkTree(WorkTree* wt) {
     free(wt->tab);
     free(wt);
+}
+
+
+char* blobWorkTree(WorkTree* wt) {
+    //Création du fichier temporaire
+    char fname[100] = "/tmp/worktreeXXXXXX";
+    int fd = mkstemp(fname); //Création + descripteur de fichier ouvert
+    printf("Descripteur des fichiers ouverts: %d\n", fd);
+
+    //Ecriture de la représentation du worktree
+    wttf(wt, fname);
+    WorkTree* wt2 = ftwt(fname);
+    printWorkTree(wt2);
+
+    //Création de l'instantané
+    char* hash = sha256file(fname);
+    char* folder = strdup(hash);
+    folder[2] = '\0';
+    struct stat st;
+    //1. Création du dossier
+    if(stat(folder, &st) == -1) {
+        mkdir(folder, 0700); //les utilisateurs du groupe ont tous les droits sur le dossier
+    }
+    //2. Création du fichier dans le dossier
+    char* path = hashToPath(hash);
+    strcat(path,".t");
+    printf("path: %s\n", path);
+    cp(path,fname);
+
+    return hash;
+
 }

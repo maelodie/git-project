@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include "hash.h"
 
 int hashFile(char * source, char * dest) {
     char cmd[1000];
@@ -17,7 +18,7 @@ char* sha256file(char* file) {
     static char template[] = "/tmp/hashXXXXXXX";
     char fname[1000];
     strcpy(fname, template);
-    int fd = mkstemp (fname);
+    int fd = mkstemp(fname);
     printf("Descripteur des fichiers ouverts: %d\n", fd);
 
     //Hashage
@@ -34,9 +35,4 @@ char* sha256file(char* file) {
     //Retour
     return res;
 
-}
-
-int main() {
-    printf("Le hash du main est %s\n", sha256file("prog1_4.c"));
-    return 0;
 }
