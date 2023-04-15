@@ -8,6 +8,6 @@ ctos: OK
 ltos: OK
 listGet: OK
 searchList: OK
-stol: REECRITURE
+stol: OK
 ltof: OK
 ftol: OK

@@ -1,0 +1,33 @@
+"filename", "language", "Makefile", "C", "C++", "Shell Script", "comment", "blank", "total"
+"/home/maeva/LU2IN006/git-project/clean.sh", "Shell Script", 0, 0, 0, 7, 1, 1, 9
+"/home/maeva/LU2IN006/git-project/exo1/Makefile", "Makefile", 12, 0, 0, 0, 0, 6, 18
+"/home/maeva/LU2IN006/git-project/exo1/prog1_3.c", "C", 0, 25, 0, 0, 6, 6, 37
+"/home/maeva/LU2IN006/git-project/exo1/prog1_4.c", "C", 0, 30, 0, 0, 4, 8, 42
+"/home/maeva/LU2IN006/git-project/exo2/Makefile", "Makefile", 10, 0, 0, 0, 0, 6, 16
+"/home/maeva/LU2IN006/git-project/exo2/liste.c", "C", 0, 144, 0, 0, 0, 24, 168
+"/home/maeva/LU2IN006/git-project/exo2/liste.h", "C", 0, 24, 0, 0, 21, 17, 62
+"/home/maeva/LU2IN006/git-project/exo2/liste_main.c", "C", 0, 41, 0, 0, 9, 9, 59
+"/home/maeva/LU2IN006/git-project/exo3/Makefile", "Makefile", 14, 0, 0, 0, 0, 6, 20
+"/home/maeva/LU2IN006/git-project/exo3/fichier.h", "C", 0, 9, 0, 0, 5, 6, 20
+"/home/maeva/LU2IN006/git-project/exo3/fichiers.c", "C", 0, 62, 0, 0, 2, 7, 71
+"/home/maeva/LU2IN006/git-project/exo3/fichiers_main.c", "C", 0, 17, 0, 0, 0, 1, 18
+"/home/maeva/LU2IN006/git-project/exo3/hash.c", "C", 0, 27, 0, 0, 4, 7, 38
+"/home/maeva/LU2IN006/git-project/exo3/hash.h", "C++", 0, 0, 5, 0, 2, 3, 10
+"/home/maeva/LU2IN006/git-project/exo3/liste.c", "C", 0, 144, 0, 0, 0, 24, 168
+"/home/maeva/LU2IN006/git-project/exo3/liste.h", "C", 0, 24, 0, 0, 21, 17, 62
+"/home/maeva/LU2IN006/git-project/exo3/test.c", "C", 0, 23, 0, 0, 5, 4, 32
+"/home/maeva/LU2IN006/git-project/exo4/Makefile", "Makefile", 9, 0, 0, 0, 0, 4, 13
+"/home/maeva/LU2IN006/git-project/exo4/worktree.c", "C", 0, 124, 0, 0, 0, 14, 138
+"/home/maeva/LU2IN006/git-project/exo4/worktree.h", "C++", 0, 0, 28, 0, 14, 16, 58
+"/home/maeva/LU2IN006/git-project/exo4/worktree_main.c", "C", 0, 46, 0, 0, 10, 13, 69
+"/home/maeva/LU2IN006/git-project/exo5/Makefile", "Makefile", 15, 0, 0, 0, 0, 7, 22
+"/home/maeva/LU2IN006/git-project/exo5/fichier.c", "C", 0, 102, 0, 0, 11, 13, 126
+"/home/maeva/LU2IN006/git-project/exo5/fichier.h", "C", 0, 13, 0, 0, 9, 10, 32
+"/home/maeva/LU2IN006/git-project/exo5/hash.c", "C", 0, 27, 0, 0, 4, 7, 38
+"/home/maeva/LU2IN006/git-project/exo5/hash.h", "C++", 0, 0, 5, 0, 2, 3, 10
+"/home/maeva/LU2IN006/git-project/exo5/liste.c", "C", 0, 144, 0, 0, 0, 24, 168
+"/home/maeva/LU2IN006/git-project/exo5/liste.h", "C", 0, 24, 0, 0, 21, 17, 62
+"/home/maeva/LU2IN006/git-project/exo5/main.c", "C", 0, 22, 0, 0, 4, 4, 30
+"/home/maeva/LU2IN006/git-project/exo5/worktree.c", "C", 0, 163, 0, 0, 6, 21, 190
+"/home/maeva/LU2IN006/git-project/exo5/worktree.h", "C++", 0, 0, 30, 0, 17, 17, 64
+"Total", "-", 60, 1235, 68, 7, 178, 322, 1870

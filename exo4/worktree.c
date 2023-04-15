@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "worktree.h"
 
 WorkFile* createWorkFile(char* name) {
     WorkFile* new = (WorkFile*)malloc(sizeof(WorkFile));
@@ -78,7 +79,7 @@ void printWorkTree(WorkTree* wt) {
 
 char* wtts(WorkTree* wt) {
     char* res = (char*)malloc(sizeof(char)*1000);
-    char* tabVal = (char*)malloc(sizeof(char));
+    char* tabVal = (char*)malloc(sizeof(char)*100);
     char* sep = "\n";
     for(int i = 0; i < wt->n; i++) {
         tabVal = wtfs(wt->tab + i);
