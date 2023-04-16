@@ -5,7 +5,7 @@ all: main
 main: hash.o liste.o fichier.o commit.o main.o
 	gcc -Wall hash.o liste.o fichier.o commit.o main.o -o main
 
-main.o: main.c commit.h fichier.h liste.h hash.h
+main.o: main.c 
 	gcc -Wall -c main.c -o main.o
 
 commit.o: commit.c commit.h fichier.h
