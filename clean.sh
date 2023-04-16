@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1..5}; do
+for i in {1..7}; do
     folder="exo${i}"
     echo $folder
     cd $folder
