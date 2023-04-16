@@ -58,7 +58,7 @@ char* hashToPath(char* hash) {
     path[1] = hash[1];
     path[2] = '/';
     int i;
-    for(i = 3; i <= strlen(hash); i++) {
+    for(i = 3; i < strlen(hash); i++) {
         path[i] = hash[i-1];
     }
     path[i] = '\0';

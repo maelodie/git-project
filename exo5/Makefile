@@ -11,7 +11,7 @@ main.o: main.c worktree.h fichier.h liste.h hash.h
 worktree.o: worktree.c worktree.h fichier.h
 	gcc -Wall -c worktree.c -o worktree.o
 
-fichier.o: fichier.c fichier.h hash.h
+fichier.o: fichier.c fichier.h
 	gcc -Wall -c fichier.c -o fichier.o
 
 liste.o : liste.c liste.h

@@ -1,3 +1,0 @@
-blobWorkTree: ok
-saveWorkTree:
-restoreWorkTree:

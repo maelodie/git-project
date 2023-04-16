@@ -1,3 +1,5 @@
 blobWorkTree: ok
-saveWorkTree:
-restoreWorkTree:
+saveWorkTree: ok
+restoreWorkTree: ok
+
+il faut résoudre les erreurs de valgrind

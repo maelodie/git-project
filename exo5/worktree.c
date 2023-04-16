@@ -144,19 +144,26 @@ char* blobWorkTree(WorkTree* wt) {
     //Création du fichier temporaire
     char fname[100] = "/tmp/worktreeXXXXXX";
     int fd = mkstemp(fname); //Création + descripteur de fichier ouvert
-    printf("Descripteur des fichiers ouverts: %d\n", fd);
-
+    if(fd == -1) {
+        printf("mkstemp a échoué\n");
+        exit(EXIT_FAILURE);
+    }
     //Ecriture de la représentation du worktree
     wttf(wt, fname);
-    WorkTree* wt2 = ftwt(fname);
-    printWorkTree(wt2);
+    //WorkTree* wt2 = ftwt(fname);
+    //printWorkTree(wt2);
 
-    //Création de l'instantané
+    ///Copie vers l'instantane
     char* hash = sha256file(fname);
     char* path = hashToFile(hash); //crée un dossier et retourne le chemin vers le fichier
-    strcat(path,".t");
-    printf("path: %s\n", path);
-    cp(path,fname);
+    
+    //Ajout du nombre de cases mémoire pour path (pour ajouter .c)
+    size_t path_len = strlen(path);
+    size_t total_len = path_len + strlen(".t") + 1;
+    char* full_path = malloc(total_len);
+    strcpy(full_path, path);
+    strcat(full_path, ".t");
+    cp(full_path, fname); //copie du contenu de fname vers path
 
     return hash;
 }

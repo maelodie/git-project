@@ -20,9 +20,9 @@ int main(void) {
     }
 
     //Test des fonctions
-    //blobWorkTree(wt);
+    blobWorkTree(wt);
     //saveWorkTree(wt, ".");
-    restoreWorkTree(wt,".");
+    //restoreWorkTree(wt,".");
     //Fonctions de libération
     freeList(L);
     freeWorkTree(wt);

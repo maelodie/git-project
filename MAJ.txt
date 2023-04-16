@@ -1,2 +1,4 @@
 - Apprendre à inclure des fonctions d'autres librairies dans un code (makefile)
-- Débugger les erreurs sur valgrind (erreurs avec strcat)
+- Débugger les erreurs sur valgrind (erreurs avec strcat): 
+    il faut initialiser les chaines avec memset:
+        memset(chaine, 0, N) où N est la taille de la chaine
