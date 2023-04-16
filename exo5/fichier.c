@@ -53,12 +53,12 @@ void cp(char* to, char* from) {
 }
     
 char* hashToPath(char* hash) {
-    char* path = (char*)malloc(sizeof(char)*(strlen(hash)+1));
+    char* path = (char*)malloc(sizeof(char)*(strlen(hash)+4));
     path[0] = hash[0];
     path[1] = hash[1];
     path[2] = '/';
     int i;
-    for(i = 3; i < strlen(hash); i++) {
+    for(i = 3; i <= strlen(hash); i++) {
         path[i] = hash[i-1];
     }
     path[i] = '\0';

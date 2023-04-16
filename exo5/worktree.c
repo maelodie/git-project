@@ -156,14 +156,8 @@ char* blobWorkTree(WorkTree* wt) {
     ///Copie vers l'instantane
     char* hash = sha256file(fname);
     char* path = hashToFile(hash); //crée un dossier et retourne le chemin vers le fichier
-    
-    //Ajout du nombre de cases mémoire pour path (pour ajouter .c)
-    size_t path_len = strlen(path);
-    size_t total_len = path_len + strlen(".t") + 1;
-    char* full_path = malloc(total_len);
-    strcpy(full_path, path);
-    strcat(full_path, ".t");
-    cp(full_path, fname); //copie du contenu de fname vers path
+    strcat(path, ".t");
+    cp(path, fname); //copie du contenu de fname vers path
 
     return hash;
 }

@@ -1,0 +1,14 @@
+initBranch: OK
+branchExists: OK
+createBranch: OK
+getCurrentBranch: OK
+printBranch: OK
+branchList: OK
+getAllCommits: OK 
+
+
+REMARQUE: 
+- en cas de pbm d'ouverture de fichier, vérifier les
+permissions avec ls -l -a
+- autre résolution: regarder le nom des fichiers
+- pour getAllCommits, voir comment marche predecessor
