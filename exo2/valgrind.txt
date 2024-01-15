@@ -1,1 +1,0 @@
-Il y'a une erreur au niveau du strcat dans ltos

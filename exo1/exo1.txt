@@ -1,2 +1,0 @@
-char* sha256file(char* file): renvoie une chaîne de aractères contenant le hash du fichier donné en paramètres
-int hashFile(char* source, char* dest): calcule le hash du premier fichier et l'écrit dans le deuxième fichier
