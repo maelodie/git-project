@@ -12,7 +12,7 @@ SRC_FILES=$(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES=$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
 # final executable
-EXECUTABLE=$(BIN_DIR)/main
+EXECUTABLE=$(BIN_DIR)/myGit
 
 all: $(EXECUTABLE)
 
